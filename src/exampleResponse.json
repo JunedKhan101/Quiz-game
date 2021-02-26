@@ -1,0 +1,121 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In a standard set of playing cards, which is the only king without a moustache?",
+      "correct_answer": "Hearts",
+      "incorrect_answers": [
+        "Spades",
+        "Diamonds",
+        "Clubs"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which sign of the zodiac is represented by the Crab?",
+      "correct_answer": "Cancer",
+      "incorrect_answers": [
+        "Libra",
+        "Virgo",
+        "Sagittarius"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What alcoholic drink is made from molasses?",
+      "correct_answer": "Rum",
+      "incorrect_answers": [
+        "Gin",
+        "Vodka",
+        "Whisky"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is on display in the Madame Tussaud&#039;s museum in London?",
+      "correct_answer": "Wax sculptures",
+      "incorrect_answers": [
+        "Designer clothing",
+        "Unreleased film reels",
+        "Vintage cars"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What was Bank of America originally established as?",
+      "correct_answer": "Bank of Italy",
+      "incorrect_answers": [
+        "Bank of Long Island",
+        "Bank of Pennsylvania",
+        "Bank of Charlotte"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is Cynophobia the fear of?",
+      "correct_answer": "Dogs",
+      "incorrect_answers": [
+        "Birds",
+        "Flying",
+        "Germs"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The Fields Medal, one of the most sought after awards in mathematics, is awarded every how many years?",
+      "correct_answer": "4",
+      "incorrect_answers": [
+        "3",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following is not an Ivy League University?",
+      "correct_answer": "Stanford",
+      "incorrect_answers": [
+        "University of Pennsylvania",
+        "Harvard",
+        "Princeton"
+      ]
+    }
+  ]
+}
