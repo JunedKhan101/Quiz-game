@@ -11,9 +11,8 @@ export default function QuizForm(props) {
 	const [answer, setAnswer] = useState([]);
 	const [submit, setSubmit] = useState(false);
 	const [score, setScore] = useState(0);
-	const [options, setOptions] = useState([]);
-	const [flag, setFlag] = useState(false);
 	let history = useHistory();
+	const [options, setOptions] = useState({});
 	useEffect(() => {
 		setAnswer([]);
 		Object.entries(map).map(([key, val]) => {
@@ -36,8 +35,20 @@ export default function QuizForm(props) {
 		}
 	}, [submit, map]);
 	useEffect(() => {
-		setFlag(flag => true);
-	}, []);
+		if (props.data.results) {
+			props.data.results.forEach((value, index) => {
+				var temp = [];
+				var tempoptions = {};
+				temp.push(value.correct_answer);
+				value.incorrect_answers.forEach((val, i) => {
+					temp.push(val);
+				});
+				tempoptions[index] = temp;
+				setOptions(options => {return {...options, [index]: temp}});
+			});	
+		}
+		console.log(props.data);
+	}, [props.data]);
 	const renderButtonViewGroup = () => {
 		if (view === "Form") {
 			return (
@@ -55,21 +66,26 @@ export default function QuizForm(props) {
 		setSubmit(false);
 	}
 	const renderAnswers = (index) => {
-		var temp = [];
-		temp.push(props.data.results[index].correct_answer);
-		props.data.results[index].incorrect_answers.forEach((current) => temp.push(current));
-		var arr = shuffle(temp);
-		setOptions(options => arr);
-		return (
-			<RadioGroup aria-label="quiz" name="quiz" onChange={handleRadioChange(index)}>
-				{
-					arr.map((val) => {
-						return (<FormControlLabel value={decodeEntities(val)} control={<Radio color="primary" />} label={decodeEntities(val)} />);
-					})
-				}
+		{console.log(options)}
+		return Object.values(options).map((group, groupIndex) => (
+			<RadioGroup
+			  key={groupIndex}
+			  aria-label="quiz"
+			  name="quiz"
+			  onChange={handleRadioChange(index)}
+			>
+			  {group.map((option, optionIndex) => {
+				return (
+				  <FormControlLabel
+					key={optionIndex}
+					value={decodeEntities(option)}
+					control={<Radio color="primary" />}
+					label={decodeEntities(option)}
+				  />
+				);
+			  })}
 			</RadioGroup>
-		);
-		setFlag(flag => false);
+		  ));
 	}
 	const handleSubmit = () => {
 		setSubmit(true);
