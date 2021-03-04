@@ -104,13 +104,13 @@ export default function QuizForm(props) {
 					<Grid item xs={12}>
 						{renderButtonViewGroup()}
 					</Grid>
-					<Grid item xs={12}>
+					<Grid item xs={12} align="center">
 						<Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
 					</Grid>
 					{ 
 						props.data.results.map((val, index) => {
 							return (
-								<Grid item xs={12}>
+								<Grid item xs={12} align="center">
 									<Card>
 										<CardContent>
 											<Grid container spacing={6} direction="column" justify="center" alignItems="center">
@@ -127,7 +127,7 @@ export default function QuizForm(props) {
 							);
 						})
 					}
-					<Grid item xs={12}>
+					<Grid item xs={12} align="center">
 						<Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
 					</Grid>
 				</Grid>

@@ -278,7 +278,7 @@ export default function Quiz(props) {
 							<Grid item xs={12}>
 								{renderButtonViewGroup()}
 							</Grid>
-							<Grid item xs={12}>
+							<Grid item xs={12} align="center">
 								<h2>{question}</h2>
 								{console.log("--------------------------------------")}
 								{console.log("Score = " + score)}
@@ -287,7 +287,7 @@ export default function Quiz(props) {
 								{console.log("Answers: " + answer)}
 								{console.log("Value: " + value)}
 							</Grid>
-							<Grid item xs={12}>
+							<Grid item xs={12} align="center">
 								<RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
 								{
 									array.map((val) => {
@@ -297,7 +297,7 @@ export default function Quiz(props) {
 								</RadioGroup>
 							</Grid>
 								{renderErrorMsg()}
-							<Grid item xs={12}>
+							<Grid item xs={12} align="center">
 								{renderButtonNavGroup()}
 							</Grid>
 						</Grid>
