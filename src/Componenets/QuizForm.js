@@ -43,6 +43,7 @@ export default function QuizForm(props) {
 				value.incorrect_answers.forEach((val, i) => {
 					temp.push(val);
 				});
+				temp = shuffle(temp);
 				tempoptions[index] = temp;
 				setOptions(options => {return {...options, [index]: temp}});
 			});	
@@ -66,26 +67,22 @@ export default function QuizForm(props) {
 		setSubmit(false);
 	}
 	const renderAnswers = (index) => {
-		{console.log(options)}
-		return Object.values(options).map((group, groupIndex) => (
+		return (
 			<RadioGroup
-			  key={groupIndex}
 			  aria-label="quiz"
 			  name="quiz"
 			  onChange={handleRadioChange(index)}
 			>
-			  {group.map((option, optionIndex) => {
-				return (
-				  <FormControlLabel
-					key={optionIndex}
-					value={decodeEntities(option)}
-					control={<Radio color="primary" />}
-					label={decodeEntities(option)}
-				  />
-				);
-			  })}
+			  {options[index] && options[index].map((option, index) => (
+				<FormControlLabel
+				  key={index}
+				  value={decodeEntities(option)}
+				  control={<Radio color="primary" />}
+				  label={decodeEntities(option)}
+				/>
+			  ))}
 			</RadioGroup>
-		  ));
+		);
 	}
 	const handleSubmit = () => {
 		setSubmit(true);

@@ -52,6 +52,7 @@ export default function Quiz(props) {
     const [amount, setAmount] = useState(0);
     const [answer, setAnswer] = useState([]); // state to store all the values entered by the user
     const [correctanswer, setCorrectAnswer] = useState([]); // state to store all the correct answer fetched by the api
+	const [submit, setSubmit] = useState(false);
 	let history = useHistory();
     useEffect(() => { getData(); }, []);
     useEffect(() => { setInitialQuestion(); });
@@ -93,6 +94,18 @@ export default function Quiz(props) {
 			}
 		}
 	}, [count]);
+	useEffect(() => {
+		if (submit) {
+			history.push({
+				pathname:  "/result",
+				state: {
+				  data: data,
+				  answer: answer,
+				  score: score,
+				} 
+			});
+		}
+	}, [submit]);
 	const setInputs = () => {
 		if (data.results) {
 			if (count > answer.length) {
@@ -211,14 +224,21 @@ export default function Quiz(props) {
         }
     }
     const handleSubmit = () => {
-		history.push({
-			pathname:  "/result",
-			state: {
-			  data: data,
-			  answer: answer,
-			  score: score,
-			} 
-		});
+		if (answer[count] === data.results[count].correct_answer) {
+			console.log("correct");
+			setScore(score => score + 1);
+			const newarr = [...answer];
+			console.log("newarr[count] = " + newarr[count]);
+			setValue(value => newarr[count]);
+		}
+		else {
+			console.log("incorrect answer");
+			setScore(score => score - 1);
+			const newarr = [...answer];
+			console.log("newarr[count] = " + newarr[count]);
+			setValue(value => newarr[count]);
+		}
+		setSubmit(submit => true);
     }
     const renderButtonNavGroup = () => {
         if (count == amount - 1) {
