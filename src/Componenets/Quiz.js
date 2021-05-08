@@ -7,6 +7,7 @@ import { withStyles, makeStyles } from "@material-ui/core/styles";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import "../css/Quiz.css";
 import QuizForm from "./QuizForm";
+import { Link } from "react-router-dom";
 
 var decodeEntities = (function() {
   // this prevents any overhead from creating the object each time
@@ -275,6 +276,9 @@ export default function Quiz(props) {
 				return (
 					<div className="quiz-child">
 						<Grid container spacing={6} direction="column" justify="center" alignItems="center">
+                            <Grid item xs={12}>
+                                <Button component={Link} to="/" variant="contained" color="default">Home</Button>
+                            </Grid>
 							<Grid item xs={12}>
 								{renderButtonViewGroup()}
 							</Grid>

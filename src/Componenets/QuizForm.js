@@ -4,6 +4,7 @@ import { Card, CardContent,
 Box, Grid, Button, ButtonGroup, Typography, Radio, RadioGroup, FormControlLabel } from "@material-ui/core";
 import Quiz, { decodeEntities, shuffle } from "./Quiz";
 import "../css/Quiz.css";
+import { Link } from "react-router-dom";
 
 export default function QuizForm(props) {
 	const [view, setView] = useState("Form");
@@ -101,6 +102,9 @@ export default function QuizForm(props) {
 			return (
 			<div className="quiz-child">
 				<Grid container spacing={6} direction="column" justify="center" alignItems="center">
+					<Grid item xs={12}>
+						<Button component={Link} to="/" variant="contained" color="default">Home</Button>
+					</Grid>
 					<Grid item xs={12}>
 						{renderButtonViewGroup()}
 					</Grid>
