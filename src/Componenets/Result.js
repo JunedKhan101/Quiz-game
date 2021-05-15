@@ -1,10 +1,10 @@
 import React, { useState }  from "react";
 import { useLocation } from 'react-router-dom';
-import { Grid, Typography, FormHelperText, Card, CardContent, Box } from "@material-ui/core";
+import { Grid, Typography, FormHelperText, Button, Card, CardContent, Box } from "@material-ui/core";
 import { decodeEntities } from "./Quiz";
 import { makeStyles } from '@material-ui/core/styles';
 import { shadows } from '@material-ui/system';
-
+import { Link } from "react-router-dom";
 export default function Result() {
 	const location = useLocation();
 	const score = location.state.score;
@@ -34,6 +34,9 @@ export default function Result() {
 						nothing when you skip <br />
 					</FormHelperText>
 				</Grid>
+				<Grid item xs={12}>
+					<Button component={Link} to="/" variant="contained" color="default">Back to Home</Button>
+				</Grid>
 				{
 					data.results.map((val, index) => {
 						return (
@@ -52,6 +55,9 @@ export default function Result() {
 						);
 					})
 				}
+				<Grid item xs={12}>
+						<Button component={Link} to="/" variant="contained" color="default">Back to Home</Button>
+					</Grid>
 			 </Grid>
 		</div>
     );
