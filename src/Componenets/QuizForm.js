@@ -19,11 +19,11 @@ export default function QuizForm(props) {
 		Object.entries(map).map(([key, val]) => {
 			setAnswer(answer => [...answer, val]);
 		});
-		console.log("---------------------------------");
-		props.data.results.forEach((val, index) => {
-			console.log(props.data.results[index].correct_answer);
-		})
-		console.log(score);
+		// console.log("---------------------------------");
+		// props.data.results.forEach((val, index) => {
+		// 	console.log(props.data.results[index].correct_answer);
+		// })
+		// console.log(score);
 		if (submit) {
 			history.push({
 			pathname:  "/result",
@@ -49,7 +49,7 @@ export default function QuizForm(props) {
 				setOptions(options => {return {...options, [index]: temp}});
 			});	
 		}
-		console.log(props.data);
+		// console.log(props.data);
 	}, [props.data]);
 	const renderButtonViewGroup = () => {
 		if (view === "Form") {
@@ -87,14 +87,14 @@ export default function QuizForm(props) {
 	}
 	const handleSubmit = () => {
 		setSubmit(true);
-		console.log(answer);
+		// console.log(answer);
 		answer.forEach((val, index) => {
 			if (answer[index] === decodeEntities(props.data.results[index].correct_answer))
 				setScore(score => score + 1);
 			else
 				setScore(score => score - 1);
 		});
-		console.log(score);
+		// console.log(score);
 		
 	}
 	const renderQuiz = () => {

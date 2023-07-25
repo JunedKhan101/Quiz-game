@@ -63,33 +63,33 @@ export default function Quiz(props) {
 		if (data.results) {
 			if (count > answer.length - 1) {
 				if (answer[count - 1] === data.results[count - 1].correct_answer) {
-				console.log("correct");
+				// console.log("correct");
 				setScore(score => score + 1);
 				const newarr = [...answer];
-				console.log("newarr[count] = " + newarr[count]);
+				// console.log("newarr[count] = " + newarr[count]);
 				setValue(value => newarr[count]);
 				}
 				else {
-					console.log("incorrect answer");
+					// console.log("incorrect answer");
 					setScore(score => score - 1);
 					const newarr = [...answer];
-					console.log("newarr[count] = " + newarr[count]);
+					// console.log("newarr[count] = " + newarr[count]);
 					setValue(value => newarr[count]);
 				}
 			}
 			else {
 				if (answer[count] === data.results[count].correct_answer) {
-					console.log("correct");
+					// console.log("correct");
 					setScore(score => score + 1);
 					const newarr = [...answer];
-					console.log("newarr[count] = " + newarr[count]);
+					// console.log("newarr[count] = " + newarr[count]);
 					setValue(value => newarr[count]);
 				}
 				else {
-					console.log("incorrect answer");
+					// console.log("incorrect answer");
 					setScore(score => score - 1);
 					const newarr = [...answer];
-					console.log("newarr[count] = " + newarr[count]);
+					// console.log("newarr[count] = " + newarr[count]);
 					setValue(value => newarr[count]);
 				}
 			}
@@ -226,17 +226,17 @@ export default function Quiz(props) {
     }
     const handleSubmit = () => {
 		if (answer[count] === data.results[count].correct_answer) {
-			console.log("correct");
+			// console.log("correct");
 			setScore(score => score + 1);
 			const newarr = [...answer];
-			console.log("newarr[count] = " + newarr[count]);
+			// console.log("newarr[count] = " + newarr[count]);
 			setValue(value => newarr[count]);
 		}
 		else {
-			console.log("incorrect answer");
+			// console.log("incorrect answer");
 			setScore(score => score - 1);
 			const newarr = [...answer];
-			console.log("newarr[count] = " + newarr[count]);
+			// console.log("newarr[count] = " + newarr[count]);
 			setValue(value => newarr[count]);
 		}
 		setSubmit(submit => true);
@@ -284,12 +284,12 @@ export default function Quiz(props) {
 							</Grid>
 							<Grid item xs={12} align="center">
 								<h2>{question}</h2>
-								{console.log("--------------------------------------")}
+								{/* {console.log("--------------------------------------")}
 								{console.log("Score = " + score)}
 								{console.log("Amount = " + amount)}
 								{console.log("Count = " + count)}
 								{console.log("Answers: " + answer)}
-								{console.log("Value: " + value)}
+								{console.log("Value: " + value)} */}
 							</Grid>
 							<Grid item xs={12} align="center">
 								<RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
