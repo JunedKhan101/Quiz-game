@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./Componenets/HomePage";
-import Quiz from "./Componenets/Quiz";
-import Result from "./Componenets/Result.js";
+import HomePage from "./Components/HomePage.jsx";
+import Quiz from "./Components/Quiz.jsx";
+import Result from "./Components/Result.jsx";
 function App() {
   return (
     <Router>
